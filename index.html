@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNBO Patch</title>
+    <style>
+        @font-face {
+            font-family: 'Futura';
+            src: local('Futura Bold'), local('Futura-Bold');
+            font-weight: bold;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #63d1df;
+        }
+
+        #rnbo-console-readout {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Futura', sans-serif;
+            font-weight: bold;
+            font-size: 10vw;
+            text-align: center;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <p id="rnbo-console-readout"></p>
+
+    <script type="text/javascript" src="js/guardrails.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
