@@ -2,7 +2,7 @@ async function setup() {
     const patchExportURL = "export/patch.export.json";
 
     const WAContext = window.AudioContext || window.webkitAudioContext;
-    const context = new WAContext();
+    const context = new WAContext({ sampleRate: 48000 });
 
     const outputNode = context.createGain();
     outputNode.connect(context.destination);
