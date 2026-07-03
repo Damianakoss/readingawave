@@ -55,13 +55,24 @@ async function setup() {
 
         // Request microphone access and connect it into the device
          let inputNode;
-        try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
-        inputNode = context.createMediaStreamSource(stream);
-        inputNode.connect(device.node);
-        } catch (err) {
-        console.log("Unable to access microphone: " + err);
+            try {
+            const stream = await navigator.mediaDevices.getUserMedia({
+            audio: {
+            echoCancellation: false,
+            noiseSuppression: false,
+            autoGainControl: false
+                },
+            video: false
+            });
+                 inputNode = context.createMediaStreamSource(stream);
+                     inputNode.connect(device.node);
+                        } catch (err) {
+                console.log("Unable to access microphone: " + err);
     }
+
+
+
+
 
     device.node.connect(outputNode);
 
